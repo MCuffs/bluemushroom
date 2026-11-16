@@ -5,25 +5,23 @@
 
 GitHub Pages가 `main` 브랜치의 `docs/`를 게시합니다. 빌드가 필요 없는 HTML/CSS/JavaScript이며 추적 코드나 외부 글꼴 요청을 사용하지 않습니다.
 
-## 2026-11-16 디자인
+## 현재 디자인: 게임 캐릭터의 가족 앨범
 
-가족과의 기억을 오래 남기고 싶다는 창업자의 이야기를 중심으로, 낡은 일본 만화 단행본을 연상시키는 편집 디자인으로 개편했습니다. 먹색·종이색·파랑, 세로 한자, 장 구분, 자가 호스팅 명조/고딕 글꼴을 사용합니다. 기존 가로 페이지 넘기기를 세로 읽기로 바꾸고 `#p1`부터 `#p6`까지의 주소를 유지합니다.
+가족과의 기억을 오래 남기고 싶다는 이야기를 중심으로 아빠·엄마·형·동생 네 식구가 서 있는 가족사진을 메인에 배치했습니다. 「아빠 전쟁」의 실제 아빠와 아들 원화를 참조해 가족 장면으로 재구성했으며 엄마와 형은 같은 게임 그림체로 맞췄습니다. 실제 가족사진이 아닌 창작 일러스트입니다. 사용자 피드백에 따라 엄마만 조금 더 날씬하게 수정했습니다.
 
-사용자 피드백에 따라 원화의 얼굴·목·어깨를 더 가늘게, 인상을 더 부드럽게 수정했습니다. 특정 작품의 등장인물을 복사한 것이 아닌 창작 인물입니다. 원화 속 가족사진도 상징적인 창작 그림이며 실제 가족사진이 아닙니다.
+굵은 게임 캐릭터 윤곽선과 게임의 타이틀 글꼴, 크림·올리브·노랑을 사용해 웹과 게임의 분위기를 연결했습니다. 기존의 갸름한 단독 남성 원화와 수채화풍 가족은 메인에 쓰지 않습니다. 세로 읽기와 `#p1`부터 `#p6`까지의 주소를 유지합니다.
 
-- `docs/index.html`: 표지·시작 이야기·게임·플레이 방법·문의·영어 후기
-- `docs/assets/manga.css`, `manga.js`: 반응형 디자인과 현재 장 표시
-- `docs/assets/guardian-portrait-v2.webp`: 웹 최적화 원화(약550KB)
-- `content/art/guardian-portrait-v2.png`: 원본 그림
-- `content/art-direction.md`: 이미지 제작 프롬프트와 수정 방향
-- `docs/assets/fonts/`: OFL 라이선스의 자가 호스팅 서브셋 글꼴 및 고지
-- `docs/assets/site.css`: 기존 개인정보 처리방침 페이지용 스타일
-- `content/dadwar-privacy.md`, `tools/build_privacy.py`: 처리방침 원문과 생성기. 디자인 개편에서 내용은 바꾸지 않았습니다.
+- `docs/index.html`: 가족 표지·시작 이야기·게임·플레이 방법·문의·영어 후기
+- `docs/assets/manga.css`, `family.css`, `manga.js`: 기본 레이아웃·가족 앨범 테마·현재 장 표시
+- `docs/assets/game-family.webp`: 최종 웹용 가족 원화
+- `content/art/game-family.png`: 원본 그림
+- `content/game-family-art.md`: 게임 원화 참고와 제작/수정 프롬프트
+- `docs/assets/fonts/`: Gothic A1·Black Han Sans·NanumMyeongjo를 자가 호스팅하는 서브셋과 OFL 고지
+- `docs/assets/site.css`: 개인정보 처리방침 페이지 스타일
+- `content/dadwar-privacy.md`, `tools/build_privacy.py`: 처리방침 원문과 생성기
 
-문의 이메일은 실제 `mailto:` 링크이며 게임은 개발 중으로 표시합니다. 정식 출시나 스토어 승인 완료로 안내하지 않습니다. 테스트 버전 링크는 게임의 GitHub Releases로 연결됩니다.
+공식 이메일 `contact@shuffla.io`, Search Console 인증 메타와 파일, 개인정보 경로는 보존합니다. 게임은 개발 중으로 표시하며 정식 출시나 스토어 승인 완료로 안내하지 않습니다.
 
-## 검증
+Chrome headless에서1440×1000,820×1180,390×844,320×740의 이미지·글꼴·가로 넘침·메뉴 앵커·개인정보 경로·JavaScript 오류를 검사합니다. 캡처와 로컬 QA 도구는 `.qa/`에 둡니다. 실제 휴대폰 브라우저/모든 보조기술을 검증한 것은 아닙니다.
 
-Chrome headless에서1440×1000,820×1180,390×844,320×740의 이미지·자가 호스팅 글꼴·단일h1·가로 넘침·메뉴 앵커 이동·개인정보 경로·JavaScript 오류 검사를 수행했습니다. 화면 캡처로 표지·게임·문의 배치를 확인했습니다. 실제 휴대폰 브라우저 및 모든 보조기술에서 검증한 것은 아닙니다. 로컬 QA 도구와 캡처는 `.qa/`에 두고 Git에서 제외합니다.
-
-글꼴은 NanumMyeongjo ExtraBold와 Gothic A1을 페이지의 글자로 서브셋하고 이름을 BlueMushroomSerifSubset/BlueMushroomSansSubset으로 변경했습니다. 원본 저작권과 OFL 고지는 `docs/assets/fonts/`에 보존했습니다. 본문에 새 글자를 많이 추가할 때 글꼴 서브셋을 다시 생성하면 됩니다.
+수정 전 단독 인물의 제작 이력은 `content/art-direction.md`에 보존합니다. 글꼴 본문에 새 글자를 추가할 때는 서브셋을 다시 생성하세요. 이름은 BlueMushroomSerifSubset/BlueMushroomSansSubset/BlueMushroomGameTitleSubset으로 변경했으며 원본 저작권과 OFL 고지는 함께 배포합니다.
