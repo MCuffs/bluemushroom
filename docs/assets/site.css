@@ -114,12 +114,14 @@ a:focus-visible, .btn:focus-visible {
 }
 .hero h1 {
   margin: 0 0 18px;
-  font-size: clamp(38px, 6.4vw, 68px);
-  line-height: 1.12;
+  font-size: clamp(28px, 4.2vw, 44px);
+  line-height: 1.32;
   font-weight: 900;
-  letter-spacing: -0.04em;
-  text-shadow: 4px 4px 0 var(--ink);
+  letter-spacing: -0.035em;
+  text-shadow: 3px 3px 0 var(--ink);
+  text-wrap: balance;
 }
+.nb { white-space: nowrap; }
 .hero p.lead {
   margin: 0 0 28px;
   font-size: 19px;
