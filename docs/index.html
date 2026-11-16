@@ -10,19 +10,19 @@
   <meta property="og:description" content="어렸을 때부터 가족과 사이가 참 좋았고, 그래서 오래오래 남기고 싶었습니다. 첫 게임 「아빠 전쟁」 출시 준비 중.">
   <meta property="og:url" content="https://mcuffs.github.io/bluemushroom/">
   <meta property="og:image" content="https://mcuffs.github.io/bluemushroom/assets/icon-512.png">
-  <meta name="theme-color" content="#21392c">
+  <meta name="theme-color" content="#111114">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/site.css?v=2">
 </head>
-<body>
+<body class="reader">
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="파랑버섯 스튜디오 첫 화면">
+    <a class="brand" href="#p1" aria-label="파랑버섯 스튜디오 표지로">
       <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M18 27h12l2 13a3 3 0 0 1-3 3.4H19A3 3 0 0 1 16 40z" fill="#fcf8ea" stroke="#17130f" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M4 25C4 13 13 5 24 5s20 8 20 20c0 2.6-2 4-4.4 4H8.4C6 29 4 27.6 4 25z" fill="#1b74ff" stroke="#17130f" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M18 27h12l2 13a3 3 0 0 1-3 3.4H19A3 3 0 0 1 16 40z" fill="#fcf8ea" stroke="#111114" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M4 25C4 13 13 5 24 5s20 8 20 20c0 2.6-2 4-4.4 4H8.4C6 29 4 27.6 4 25z" fill="#1b74ff" stroke="#111114" stroke-width="3" stroke-linejoin="round"/>
         <circle cx="16" cy="17" r="3.6" fill="#fcf8ea"/>
         <circle cx="29" cy="13" r="2.6" fill="#fcf8ea"/>
         <circle cx="33" cy="22" r="3" fill="#fcf8ea"/>
@@ -30,90 +30,120 @@
       <span>파랑버섯 스튜디오<small>Bluemushroom studio</small></span>
     </a>
     <nav class="nav" aria-label="주요 메뉴">
-      <a href="#game">게임</a>
-      <a href="#studio">스튜디오</a>
-      <a href="#en" lang="en">English</a>
+      <a href="#p3">게임</a>
+      <a href="#p5">스튜디오</a>
+      <a href="#p6" lang="en">English</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="hero">
-    <div class="wrap">
-      <div class="hero-text">
-        <p class="eyebrow">대한민국 인디 게임 스튜디오</p>
-        <h1>저는 어렸을 때부터 가족과 사이가 참 좋았는데요, <span class="nb">그래서 오래오래</span> 남기고 싶었습니다.</h1>
-        <p class="lead">파랑버섯 스튜디오는 한 손으로 짧게 즐기는 모바일 게임을 만듭니다. 첫 게임 「아빠 전쟁」을 준비하고 있습니다.</p>
-        <div class="actions">
-          <a class="btn" href="#game">아빠 전쟁 보기</a>
-          <a class="btn ghost" href="#studio">문의하기</a>
-        </div>
+<main class="book" id="book" tabindex="0" aria-label="파랑버섯 스튜디오 소개. 좌우로 한 쪽씩 넘겨 읽습니다.">
+
+  <!-- 1쪽: 표지 -->
+  <section class="sheet" id="p1" aria-label="1쪽. 표지">
+    <div class="paper cover" data-no="1">
+      <figure class="cover-art">
+        <img src="assets/hero-manga.svg" width="640" height="720" alt="집중선 한가운데에서 주먹을 쥐고 씩 웃는 만화풍 주인공. 가슴에 파랑버섯 배지를 달고 있다.">
+        <span class="sfx sfx-cover" aria-hidden="true">불끈!!</span>
+      </figure>
+      <div class="cover-title">
+        <p class="tag">대한민국 인디 게임 스튜디오</p>
+        <h1><span>파랑버섯</span> <span>스튜디오</span></h1>
+        <p class="romaji" lang="en">BLUEMUSHROOM STUDIO</p>
+        <p class="vol" aria-hidden="true">VOL.<b>1</b></p>
+        <a class="turn-hint" href="#p2">넘겨서 읽기 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="hero-art">
-        <img src="assets/keyart-dad.jpg" width="641" height="1100" alt="슬리퍼를 신고 학교 쪽으로 달려가는 아빠. 게임 「아빠 전쟁」의 대표 그림.">
-      </div>
-    </div>
-  </div>
-
-  <section id="game">
-    <div class="wrap">
-      <h2>게임</h2>
-      <p class="section-note">지금 만들고 있는 게임입니다.</p>
-
-      <article class="card game">
-        <div>
-          <div class="game-head">
-            <img src="assets/icon-180.png" width="180" height="180" alt="아빠 전쟁 앱 아이콘">
-            <div>
-              <h3>아빠 전쟁</h3>
-              <p lang="en">Dad War</p>
-            </div>
-          </div>
-          <ul class="chips" aria-label="게임 정보">
-            <li class="status">출시 준비 중</li>
-            <li>Android</li>
-            <li>세로형 캐주얼 액션</li>
-            <li>한국어</li>
-          </ul>
-
-          <p class="quote">“아빠… 나 오늘 싸웠는데.”</p>
-          <p>아들의 장난 한마디에 아빠가 진심으로 학교로 달려갑니다. 그런데 도착해 보니 상대도 전부 누군가의 아빠입니다.</p>
-          <p>“아빠? 장난이야! 아빠!!” 장난을 친 아들은 당황하고, 아빠 혼자 너무 진지합니다.</p>
-
-          <ul class="points">
-            <li>
-              <span class="num" aria-hidden="true">1</span>
-              <div><strong>당겨서 날립니다</strong><span>아빠를 뒤로 당겼다 놓으면 날아가 부딪힙니다. 벽에 튕기는 각도까지 계산하면 한 번에 여럿을 넘어뜨릴 수 있습니다.</span></div>
-            </li>
-            <li>
-              <span class="num" aria-hidden="true">2</span>
-              <div><strong>한 판이 짧습니다</strong><span>한 판은 1분 안쪽입니다. 정해진 횟수 안에 복도를 정리하면 별을 받습니다.</span></div>
-            </li>
-            <li>
-              <span class="num" aria-hidden="true">3</span>
-              <div><strong>아빠가 강해집니다</strong><span>엄마가 챙겨 준 도시락에서 장비가 나오고, 모은 재화로 아빠를 강화합니다.</span></div>
-            </li>
-          </ul>
-
-          <p class="game-links"><a href="dadwar/privacy/">아빠 전쟁 개인정보 처리방침</a></p>
-        </div>
-
-        <figure>
-          <div class="phone">
-            <img src="assets/shot-flight.jpg" width="720" height="1280" loading="lazy" alt="학교 복도에서 아빠가 날아가 상대 아빠들에게 향하는 게임 화면">
-          </div>
-          <figcaption>개발 중인 화면입니다. 출시 때 달라질 수 있습니다.</figcaption>
-        </figure>
-      </article>
+      <p class="obi">저는 어렸을 때부터 가족과 사이가 참 좋았는데요, <span class="nb">그래서 오래오래</span> 남기고 싶었습니다.</p>
     </div>
   </section>
 
-  <section id="studio">
-    <div class="wrap">
-      <h2>스튜디오</h2>
-      <p class="section-note">게임과 관련한 문의는 아래 이메일로 보내 주세요.</p>
+  <!-- 2쪽: 소개 -->
+  <section class="sheet" id="p2" aria-label="2쪽. 스튜디오 소개">
+    <div class="paper intro" data-no="2">
+      <div class="panel closeup eyes" role="img" aria-label="주인공의 날카로운 눈매를 크게 잡은 컷">
+        <span class="sfx" aria-hidden="true">번쩍</span>
+      </div>
+      <div class="panel talk">
+        <h2 class="cap">파랑버섯 스튜디오는</h2>
+        <p class="bubble">한 손으로 짧게 즐기는 모바일 게임을 만듭니다.</p>
+        <p class="bubble right">첫 게임 「아빠 전쟁」을 준비하고 있습니다.</p>
+      </div>
+      <div class="panel closeup fist" role="img" aria-label="붕대를 감고 꽉 쥔 주먹을 크게 잡은 컷">
+        <span class="sfx" aria-hidden="true">꽉!</span>
+      </div>
+      <a class="next-chapter" href="#p3">다음 장 · 제1화 아빠 전쟁 <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
 
-      <div class="card info">
+  <!-- 3쪽: 아빠 전쟁 이야기 -->
+  <section class="sheet" id="p3" aria-label="3쪽. 제1화 아빠 전쟁">
+    <div class="paper story" data-no="3">
+      <header class="chapter">
+        <span class="chapter-no">제1화</span>
+        <h2>아빠 전쟁</h2>
+        <span class="chapter-en" lang="en">DAD WAR</span>
+      </header>
+      <figure class="panel art">
+        <img src="assets/keyart-dad.jpg" width="641" height="1100" alt="슬리퍼를 신고 학교 쪽으로 달려가는 아빠. 게임 「아빠 전쟁」의 대표 그림.">
+        <span class="sfx" aria-hidden="true">다다다다</span>
+      </figure>
+      <div class="panel lines">
+        <p class="bubble">“아빠… 나 오늘 싸웠는데.”</p>
+        <p class="cap">아들의 장난 한마디에 아빠가 진심으로 학교로 달려갑니다.</p>
+        <p class="bubble shout">“아빠? 장난이야! 아빠!!”</p>
+        <p class="cap">그런데 도착해 보니 상대도 전부 누군가의 아빠입니다.</p>
+        <p class="cap strong">장난을 친 아들은 당황하고, 아빠 혼자 너무 진지합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4쪽: 게임 소개 -->
+  <section class="sheet" id="p4" aria-label="4쪽. 게임 소개">
+    <div class="paper play" data-no="4">
+      <header class="chapter">
+        <span class="chapter-no">제1화</span>
+        <h2>게임 소개</h2>
+        <ul class="chips" aria-label="게임 정보">
+          <li class="status">출시 준비 중</li>
+          <li>Android</li>
+          <li>세로형 캐주얼 액션</li>
+          <li>한국어</li>
+        </ul>
+      </header>
+      <ol class="points">
+        <li class="panel point">
+          <span class="num" aria-hidden="true">1</span>
+          <div><h3>당겨서 날립니다</h3><p>아빠를 뒤로 당겼다 놓으면 날아가 부딪힙니다. 벽에 튕기는 각도까지 계산하면 한 번에 여럿을 넘어뜨릴 수 있습니다.</p></div>
+          <span class="sfx" aria-hidden="true">휘익—</span>
+        </li>
+        <li class="panel point">
+          <span class="num" aria-hidden="true">2</span>
+          <div><h3>한 판이 짧습니다</h3><p>한 판은 1분 안쪽입니다. 정해진 횟수 안에 복도를 정리하면 별을 받습니다.</p></div>
+          <span class="sfx" aria-hidden="true">딱!</span>
+        </li>
+        <li class="panel point">
+          <span class="num" aria-hidden="true">3</span>
+          <div><h3>아빠가 강해집니다</h3><p>엄마가 챙겨 준 도시락에서 장비가 나오고, 모은 재화로 아빠를 강화합니다.</p></div>
+          <span class="sfx" aria-hidden="true">쑥쑥</span>
+        </li>
+      </ol>
+      <figure class="shot">
+        <div class="phone">
+          <img src="assets/shot-flight.jpg" width="720" height="1280" loading="lazy" alt="학교 복도에서 아빠가 날아가 상대 아빠들에게 향하는 게임 화면">
+        </div>
+        <figcaption>개발 중인 화면입니다. 출시 때 달라질 수 있습니다.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5쪽: 스튜디오 -->
+  <section class="sheet" id="p5" aria-label="5쪽. 스튜디오 정보와 문의">
+    <div class="paper studio" data-no="5">
+      <header class="chapter">
+        <span class="chapter-no">판권</span>
+        <h2>스튜디오</h2>
+      </header>
+      <div class="panel info">
         <dl>
           <div class="row"><dt>상호</dt><dd>파랑버섯 스튜디오 <span lang="en">(Bluemushroom studio)</span></dd></div>
           <div class="row"><dt>하는 일</dt><dd>모바일 게임 개발과 서비스</dd></div>
@@ -121,26 +151,161 @@
           <div class="row"><dt>문의</dt><dd><a href="mailto:alstnwjd0424@naver.com">alstnwjd0424@naver.com</a></dd></div>
         </dl>
       </div>
+      <div class="panel contact">
+        <img src="assets/icon-180.png" width="180" height="180" alt="아빠 전쟁 앱 아이콘">
+        <p class="bubble">게임과 관련한 문의는 이메일로 보내 주세요.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:alstnwjd0424@naver.com">이메일 보내기</a>
+          <a class="btn ghost" href="dadwar/privacy/">아빠 전쟁 개인정보 처리방침</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="en" class="en" lang="en">
-    <div class="wrap">
-      <h2>About Bluemushroom studio</h2>
-      <p class="section-note">English summary</p>
-      <p>Bluemushroom studio (파랑버섯 스튜디오) is an independent game studio based in the Republic of Korea. “I have been close to my family ever since I was little, and I wanted to keep that for a long, long time.” We make mobile games that can be played with one hand in short sessions.</p>
-      <p>Our first title, <strong>Dad War (아빠 전쟁)</strong>, is a portrait casual action game for Android and is currently in development. A boy's prank sends his dad sprinting to school, where he runs into other kids' dads. Pull back, let go, and send dad flying.</p>
-      <p>Contact: <a href="mailto:alstnwjd0424@naver.com">alstnwjd0424@naver.com</a> · <a href="dadwar/privacy/">Dad War Privacy Policy (Korean)</a></p>
+  <!-- 6쪽: 영어 요약 -->
+  <section class="sheet" id="p6" aria-label="6쪽. 영어 요약" lang="en">
+    <div class="paper en" data-no="6">
+      <header class="chapter">
+        <span class="chapter-no">EXTRA</span>
+        <h2>About Bluemushroom studio</h2>
+      </header>
+      <div class="panel about">
+        <p>Bluemushroom studio (파랑버섯 스튜디오) is an independent game studio based in the Republic of Korea. “I have been close to my family ever since I was little, and I wanted to keep that for a long, long time.” We make mobile games that can be played with one hand in short sessions.</p>
+        <p>Our first title, <strong>Dad War (아빠 전쟁)</strong>, is a portrait casual action game for Android and is currently in development. A boy's prank sends his dad sprinting to school, where he runs into other kids' dads. Pull back, let go, and send dad flying.</p>
+        <p>Contact: <a href="mailto:alstnwjd0424@naver.com">alstnwjd0424@naver.com</a> · <a href="dadwar/privacy/">Dad War Privacy Policy (Korean)</a></p>
+      </div>
+      <div class="fin">
+        <p class="fin-mark" lang="ko">— 끝 —</p>
+        <a class="btn ghost" href="#p1" lang="ko">처음으로</a>
+        <p class="copy">© 2026 Bluemushroom studio · <span lang="ko">파랑버섯 스튜디오</span></p>
+      </div>
     </div>
   </section>
+
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>© 2026 Bluemushroom studio · 파랑버섯 스튜디오</p>
-    <p><a href="dadwar/privacy/">개인정보 처리방침</a></p>
-  </div>
-</footer>
+<nav class="pager" aria-label="쪽 넘기기">
+  <a class="turn prev" href="#p1" aria-label="이전 쪽"><span aria-hidden="true">←</span></a>
+  <ol class="dots">
+    <li><a href="#p1" aria-label="1쪽 표지" aria-current="page">1</a></li>
+    <li><a href="#p2" aria-label="2쪽 소개">2</a></li>
+    <li><a href="#p3" aria-label="3쪽 아빠 전쟁">3</a></li>
+    <li><a href="#p4" aria-label="4쪽 게임 소개">4</a></li>
+    <li><a href="#p5" aria-label="5쪽 스튜디오">5</a></li>
+    <li><a href="#p6" aria-label="6쪽 English">6</a></li>
+  </ol>
+  <a class="turn next" href="#p2" aria-label="다음 쪽"><span aria-hidden="true">→</span></a>
+</nav>
+
+<script>
+(function () {
+  var book = document.getElementById('book');
+  var sheets = Array.prototype.slice.call(book.querySelectorAll('.sheet'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.dots a'));
+  var prev = document.querySelector('.turn.prev');
+  var next = document.querySelector('.turn.next');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var index = -1;
+  var wheelLock = 0;
+
+  function clamp(i) { return Math.max(0, Math.min(sheets.length - 1, i)); }
+
+  var settle = 0;
+  var syncTimer = 0;
+
+  var holdUntil = 0;
+
+  // 버튼·키보드·휠로 넘길 때: 쪽 번호를 먼저 바꾸고 화면을 옮긴다(연달아 눌러도 한 쪽씩 정확히 간다).
+  function go(i, instant) {
+    i = clamp(i);
+    var left = sheets[i].offsetLeft - book.offsetLeft;
+    window.clearTimeout(settle);
+    apply(i);
+    if (instant || reduce) { holdUntil = 0; book.scrollTo({ left: left, behavior: 'auto' }); return; }
+    holdUntil = Date.now() + 1000;
+    book.scrollTo({ left: left, behavior: 'smooth' });
+    // 부드러운 넘김이 무시되거나 끊기는 브라우저가 있어, 잠시 뒤에도 도착하지 않았으면 바로 옮긴다.
+    settle = window.setTimeout(function () {
+      holdUntil = 0;
+      if (Math.abs(book.scrollLeft - left) > 4) book.scrollTo({ left: left, behavior: 'auto' });
+      sync();
+    }, 900);
+  }
+
+  // 손으로 직접 넘기기 시작하면 위의 보정이 끼어들지 않게 한다.
+  ['pointerdown', 'touchstart'].forEach(function (type) {
+    book.addEventListener(type, function () { window.clearTimeout(settle); holdUntil = 0; }, { passive: true });
+  });
+
+  // 손으로 넘겼을 때: 화면 위치에서 쪽 번호를 읽는다.
+  function sync() {
+    if (Date.now() < holdUntil) return;
+    apply(clamp(Math.round(book.scrollLeft / book.clientWidth)));
+  }
+
+  function apply(i) {
+    if (i === index) return;
+    index = i;
+    dots.forEach(function (d, k) {
+      if (k === i) d.setAttribute('aria-current', 'page'); else d.removeAttribute('aria-current');
+    });
+    prev.href = '#p' + (clamp(i - 1) + 1);
+    next.href = '#p' + (clamp(i + 1) + 1);
+    prev.classList.toggle('off', i === 0);
+    next.classList.toggle('off', i === sheets.length - 1);
+    if (history.replaceState) history.replaceState(null, '', '#p' + (i + 1));
+  }
+
+  book.addEventListener('scroll', function () {
+    window.requestAnimationFrame(sync);
+    window.clearTimeout(syncTimer);
+    syncTimer = window.setTimeout(sync, 140);
+  }, { passive: true });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#p"]');
+    if (!a) return;
+    var n = parseInt(a.getAttribute('href').slice(2), 10);
+    if (!n) return;
+    e.preventDefault();
+    go(n - 1);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(index + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(index - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(sheets.length - 1); }
+  });
+
+  // 마우스 휠(위아래)로도 한 쪽씩 넘긴다. 쪽 안에 세로로 읽을 내용이 남아 있으면 그쪽을 먼저 읽게 둔다.
+  book.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    var s = sheets[Math.max(index, 0)];
+    if (s.scrollHeight > s.clientHeight + 2) {
+      var atTop = s.scrollTop <= 0;
+      var atBottom = s.scrollTop + s.clientHeight >= s.scrollHeight - 2;
+      if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) return;
+    }
+    e.preventDefault();
+    var now = Date.now();
+    if (now < wheelLock || Math.abs(e.deltaY) < 12) return;
+    wheelLock = now + 700;
+    go(index + (e.deltaY > 0 ? 1 : -1));
+  }, { passive: false });
+
+  window.addEventListener('resize', function () { if (index >= 0) go(index, true); });
+
+  function fromHash() {
+    var m = /^#p(\d+)$/.exec(location.hash);
+    if (m) go(parseInt(m[1], 10) - 1, true);
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+  sync();
+})();
+</script>
 
 </body>
 </html>
