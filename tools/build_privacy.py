@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""content/dadwar-privacy.md 를 docs/dadwar/privacy/index.html 로 바꾼다.
+"""content/dadwar-privacy.md 를 public/dadwar/privacy/index.html 로 바꾼다.
 
 문구는 손대지 않고 그대로 옮긴다. 지원하는 문법은 처리방침 원문이 쓰는 것뿐이다:
 '# 제목', '## 소제목', 빈 줄로 나뉜 문단, [글자](주소) 링크.
@@ -13,7 +13,8 @@ import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "dadwar-privacy.md"
-OUT = ROOT / "docs" / "dadwar" / "privacy" / "index.html"
+# docs/ 는 빌드 결과물이라 직접 쓰지 않는다. public/ 에 쓰고 `npm run build` 로 docs/ 에 반영한다.
+OUT = ROOT / "public" / "dadwar" / "privacy" / "index.html"
 
 LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
 # 영문·숫자만 주소로 본다. \w 는 한글도 잡아서 "…@naver.com으로"의 조사까지 주소에 넣는다.

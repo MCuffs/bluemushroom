@@ -1,0 +1,15 @@
+/* 글꼴 파일을 불러오는 선언만 둔다. 모양은 Astryx 테마(src/themes/family)가 정한다. */
+@font-face {
+  font-family: StudioSans;
+  src: url('/assets/fonts/studio-sans.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: StudioGameTitle;
+  src: url('/assets/fonts/studio-game-title.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}

@@ -3,28 +3,99 @@
 사이트: https://mcuffs.github.io/bluemushroom/
 개인정보 처리방침: https://mcuffs.github.io/bluemushroom/dadwar/privacy/
 
-GitHub Pages가 `main` 브랜치의 `docs/`를 게시합니다. 빌드가 필요 없는 HTML/CSS/JavaScript이며 추적 코드나 외부 글꼴 요청을 사용하지 않습니다.
+GitHub Pages가 `main` 브랜치의 `docs/`를 게시합니다. 2026-11-17부터 첫 화면은 React 19와 Meta의 Astryx 디자인 시스템(0.7.16) 부품으로 만들고, Vite로 빌드한 결과를 `docs/`에 넣습니다. 추적 코드와 외부 글꼴·스크립트 요청은 쓰지 않습니다.
 
-## 현재 디자인: 캐주얼 가족 게임 스튜디오
+**`docs/`는 빌드할 때마다 통째로 다시 만들어집니다. 직접 고치지 마세요.** 그대로 게시할 파일은 `public/`에 둡니다.
 
-가족과의 기억을 오래 남기고 싶다는 이야기를 중심으로 아빠 칠석·엄마 수진·형 철수·막내 만수 네 식구가 서 있는 가족사진을 메인에 배치했습니다. 「아빠 전쟁」의 실제 아빠와 아들 원화를 참조해 가족 장면으로 재구성했으며 엄마와 형은 같은 게임 그림체로 맞췄습니다. 실제 가족사진이 아닌 창작 일러스트입니다. 사용자 피드백에 따라 엄마만 조금 더 날씬하게 수정했습니다.
+## 고치는 방법
 
-굵은 게임 캐릭터와 게임의 타이틀 글꼴, 흰색 바탕, 둥근 카드·버튼과 밝은 강조색으로 웹과 게임을 연결합니다. 파랑버섯 로고와 가족 얼굴 썸네일을 사용합니다. 기존의 갸름한 단독 남성 원화와 수채화풍 가족은 메인에 쓰지 않습니다. 세로 읽기와 `#p1`부터 `#p6`까지의 주소를 유지합니다.
+처음 한 번 의존성을 설치합니다.
 
-- `docs/index.html`: 가족 표지·시작 이야기·게임·플레이 방법·문의·영어 후기
-- `docs/assets/manga.css`, `family.css`, `casual.css`, `manga.js`: 기본 레이아웃·가족 테마·캐주얼 디자인·현재 장 표시
-- `content/games-lineup.json`: 여섯 작품의 제목·주인공·장르·시나리오·상태
-- `content/games-roadmap.md`: 제작 순서·프로토타입 범위·가족 서사
-- `docs/assets/game-family.webp`: 최종 웹용 가족 원화
-- `content/art/game-family.png`: 원본 그림
-- `content/game-family-art.md`: 게임 원화 참고와 제작/수정 프롬프트
-- `content/design-guide.md`: 흰색 배경·메인 가족사진·확정 이름 등 디자인 기준
-- `docs/assets/fonts/`: Gothic A1·Black Han Sans·NanumMyeongjo를 자가 호스팅하는 서브셋과 OFL 고지
-- `docs/assets/site.css`: 개인정보 처리방침 페이지 스타일
-- `content/dadwar-privacy.md`, `tools/build_privacy.py`: 처리방침 원문과 생성기
+```bash
+npm ci
+```
 
-공식 이메일 `contact@shuffla.io`, Search Console 인증 메타와 파일, 개인정보 경로는 보존합니다. 아빠 전쟁은 개발 중, 후속 다섯 작품은 출시 예정·기획 중으로 구분합니다. 출시일 미정과 제작 순서 변경 가능성을 표시하고, 후속작의 이야기/플레이 구상을 펼쳐 볼 수 있습니다. 정식 출시나 스토어 승인 완료로 안내하지 않습니다.
+고친 뒤에는 빌드해서 `docs/`를 갱신하고, 소스와 `docs/`를 함께 커밋합니다. `main`에 올리면 1~2분 안에 사이트에 반영됩니다.
 
-Chrome headless에서1440×1000,820×1180,390×844,320×740의 이미지·글꼴·가로 넘침·메뉴 앵커·개인정보 경로·JavaScript 오류를 검사합니다. 캡처와 로컬 QA 도구는 `.qa/`에 둡니다. 실제 휴대폰 브라우저/모든 보조기술을 검증한 것은 아닙니다.
+```bash
+npm run build
+```
 
-수정 전 단독 인물의 제작 이력은 `content/art-direction.md`에 보존합니다. 글꼴 본문에 새 글자를 추가할 때는 서브셋을 다시 생성하세요. 이름은 BlueMushroomSerifSubset/BlueMushroomSansSubset/BlueMushroomGameTitleSubset으로 변경했으며 원본 저작권과 OFL 고지는 함께 배포합니다.
+| 고칠 것 | 위치 |
+| --- | --- |
+| 첫 화면의 문구와 구성 | `src/pages/Home.tsx` |
+| 출시 예정 카드 | `src/pages/Home.tsx`의 `GAMES`. `content/games-lineup.json`과 같은 내용으로 유지 |
+| 색, 글꼴, 글자 크기, 둥글기 | 테마. 아래 "테마" 참고 |
+| 그림, 글꼴 파일, 그대로 게시할 파일 | `public/` |
+| 머리말 태그(제목, 설명, 인증 태그), 스크립트 없이 볼 때의 안내 | `index.html` |
+| 처리방침 | `content/dadwar-privacy.md`를 고치고 `python3 tools/build_privacy.py` 실행 후 빌드. 게임 저장소의 `PrivacyPolicy.md`, 앱 안 문구와 글자까지 같게 유지 |
+
+### 부품 쓰는 규칙
+
+Astryx의 작업 규칙은 `AGENTS.md`와 `.claude/CLAUDE.md`에 있습니다(Astryx가 관리하는 구역). 요점은 다음과 같습니다.
+
+- 배치는 `VStack`, `HStack`, `Grid`, `Card` 같은 부품으로 하고 `<div>`와 직접 스타일을 쓰지 않습니다.
+- 색과 크기는 부품 속성과 테마 값만 씁니다. 색상 코드나 px 값을 직접 적지 않습니다.
+- 부품의 속성은 `npm run astryx -- component <이름>`으로 확인합니다.
+- 고친 뒤 `npm run astryx -- doctor --built .`로 점검합니다. `src/astryx-themes.js`에 대한 경고 2건은 Astryx가 만든 파일이라 그대로 둡니다.
+
+### 테마
+
+테마 이름은 `family`입니다. 설정은 명령으로 바꿉니다.
+
+```bash
+npm run astryx -- experimental theme editor set family corners round
+```
+
+명령으로 안 되는 것은 `themes/family/family.theme.ts`에 직접 적습니다(한글 어절 단위 줄바꿈, 접기 제목의 누르는 높이가 여기에 있습니다). 이 파일을 고친 뒤에는 다시 빌드합니다.
+
+```bash
+npm run astryx -- experimental theme compile themes/family/family.theme.ts
+```
+
+테마를 다시 빌드하면 `src/themes/family/family.fonts.css`가 지워집니다. 아래 두 줄로 되돌린 뒤 `npm run build`를 실행합니다.
+
+```bash
+cp themes/family/family.fonts.css src/themes/family/family.fonts.css
+```
+
+```bash
+npm run astryx -- theme add family
+```
+
+## 지켜야 할 것
+
+- **Search Console 인증:** `index.html`의 `google-site-verification` 태그와 `public/google6c6a5495e3adbfbc.html`을 지우면 인증이 풀립니다. Google Play 조직 계정의 웹사이트 확인이 이 인증에 걸려 있습니다.
+- **처리방침 주소:** `/dadwar/privacy/` 경로를 바꾸지 않습니다. 앱 안 링크가 이 주소를 씁니다.
+- **자리 표시:** `#p1`~`#p6`, `#dadwar`를 유지합니다. 처리방침 페이지의 메뉴가 `#p3`, `#p5`로 들어옵니다.
+- **문의 주소:** `contact@shuffla.io`.
+- **출시 상태 표기:** 아빠 전쟁은 개발 중, 후속 다섯 작품은 출시 예정·기획 중으로 구분합니다. 정해지지 않은 출시일이나 스토어 링크를 넣지 않습니다.
+- **글꼴:** `public/assets/fonts/`의 두 글꼴은 지금 문구에 쓰인 글자만 담은 서브셋입니다(Gothic A1, Black Han Sans, OFL 고지 포함). 새 글자가 들어가면 그 글자만 시스템 글꼴로 나오므로 서브셋을 다시 만들어야 합니다. 원본 글꼴 파일은 이 저장소에 없습니다.
+
+## 파일
+
+| 경로 | 내용 |
+| --- | --- |
+| `index.html` | 빌드의 시작 페이지. 머리말 태그와 스크립트 없이 볼 때의 안내 |
+| `src/main.tsx` | 시작점. 테마와 한국어 문구 묶음을 건다 |
+| `src/pages/Home.tsx` | 첫 화면 (표지, 우리의 이야기, 출시 예정작, 아빠 전쟁, 플레이 방법, 문의, 영어 후기) |
+| `themes/family/` | 테마 원본. `family.settings.json`은 테마 명령이 관리 |
+| `src/themes/family/`, `src/astryx-themes.js` | 테마의 앱용 사본과 연결 파일. 자동 생성, 직접 고치지 않음 |
+| `public/` | 그대로 게시되는 파일. 그림, 글꼴, 처리방침 페이지와 그 스타일(`assets/site.css`), 인증 파일, `.nojekyll` |
+| `docs/` | 빌드 결과. GitHub Pages가 게시 |
+| `content/` | 처리방침 원문, 디자인 기준, 작품 라인업과 제작 순서, 원화와 제작 기록 |
+| `tools/build_privacy.py` | 처리방침 원문을 `public/dadwar/privacy/index.html`로 변환 |
+| `tools/capture.mjs` | 화면 없는 크롬으로 페이지 전체 캡처 (`node tools/capture.mjs <주소> <파일> <폭> <높이> [mobile]`) |
+| `tools/build_hero_art.py` | 이전 만화풍 표지 그림용. 지금은 쓰지 않음 |
+
+## 그림
+
+메인의 가족 그림(`public/assets/game-family.webp`)은 「아빠 전쟁」의 아빠와 아들 원화를 바탕으로 구성한 창작 일러스트이며 실제 가족사진이 아닙니다. 왼쪽부터 아빠 칠석, 형 철수, 막내 만수, 엄마 수진입니다. 얼굴 썸네일 네 장(`face-*.webp`)은 이 그림에서 잘라 낸 것입니다. 디자인 기준과 확정 이름은 `content/design-guide.md`, 원화 제작 기록은 `content/game-family-art.md`와 `content/art-direction.md`에 있습니다.
+
+## 확인한 것과 한계
+
+- 화면 없는 크롬에서 폭 1280과 390으로 전체 화면을 캡처해 확인했습니다. 가로 넘침, 스크립트 오류, 불러오지 못한 그림은 없었습니다.
+- 처리방침 페이지는 이전 게시본과 바이트 단위로 같습니다.
+- 첫 화면은 스크립트가 있어야 보입니다. 스크립트가 꺼져 있으면 스튜디오 이름, 문의 주소, 처리방침 링크만 보입니다.
+- 실제 휴대폰과 화면 낭독기에서는 확인하지 않았습니다.
+- 로컬 QA 캡처는 `.qa/`에 둡니다(커밋하지 않음).
