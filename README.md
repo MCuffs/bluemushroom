@@ -28,7 +28,8 @@ npm run build
 | 색, 글꼴, 글자 크기, 둥글기 | 테마. 아래 "테마" 참고 |
 | 그림, 글꼴 파일, 그대로 게시할 파일 | `public/` |
 | 머리말 태그(제목, 설명, 인증 태그), 스크립트 없이 볼 때의 안내 | `index.html` |
-| 처리방침 | `content/dadwar-privacy.md`를 고치고 `python3 tools/build_privacy.py` 실행 후 빌드. 게임 저장소의 `PrivacyPolicy.md`, 앱 안 문구와 글자까지 같게 유지 |
+| 처리방침 문구 | `content/dadwar-privacy.md`를 고치고 `python3 tools/build_privacy.py` 실행 후 빌드. 게임 저장소의 `PrivacyPolicy.md`, 앱 안 문구와 글자까지 같게 유지 |
+| 처리방침 페이지의 모양 | 틀은 `tools/build_privacy.py`의 `PAGE`, 스타일은 `public/assets/site.css`. 스크립트 없이도 읽혀야 해서 정적 HTML로 둔다. 첫 화면의 테마 값을 바꾸면 이 스타일의 값도 맞춘다 |
 
 ### 부품 쓰는 규칙
 
@@ -70,7 +71,7 @@ npm run astryx -- theme add family
 - **자리 표시:** `#p1`~`#p6`, `#dadwar`를 유지합니다. 처리방침 페이지의 메뉴가 `#p3`, `#p5`로 들어옵니다.
 - **문의 주소:** `contact@shuffla.io`.
 - **출시 상태 표기:** 아빠 전쟁은 개발 중, 후속 다섯 작품은 출시 예정·기획 중으로 구분합니다. 정해지지 않은 출시일이나 스토어 링크를 넣지 않습니다.
-- **글꼴:** 글꼴은 Pretendard 한 가지입니다(굵기 400~700). `tools/subset-fonts.mjs`가 원본(`content/fonts/PretendardVariable.woff2`)에서 사이트 문구에 쓰인 글자만 남겨 `public/assets/fonts/bluemushroom-sans.woff2`를 만들고, `npm run build`가 매번 먼저 실행합니다. Pretendard는 SIL OFL 1.1이고 'Pretendard'가 예약 이름이라, 글자를 덜어 낸 파일은 글꼴 안의 이름을 'Bluemushroom Sans'로 바꿔 배포합니다. 라이선스 고지(`public/assets/fonts/Pretendard-OFL.txt`)를 함께 게시합니다.
+- **글꼴:** 글꼴은 Pretendard 한 가지입니다(굵기 400~700). `tools/subset-fonts.mjs`가 원본(`content/fonts/PretendardVariable.woff2`)에서 첫 화면과 처리방침 페이지에 쓰인 글자만 남겨 `public/assets/fonts/bluemushroom-sans.woff2`를 만들고, `npm run build`가 매번 먼저 실행합니다. Pretendard는 SIL OFL 1.1이고 'Pretendard'가 예약 이름이라, 글자를 덜어 낸 파일은 글꼴 안의 이름을 'Bluemushroom Sans'로 바꿔 배포합니다. 라이선스 고지(`public/assets/fonts/Pretendard-OFL.txt`)를 함께 게시합니다.
 
 ## 파일
 
@@ -97,7 +98,7 @@ npm run astryx -- theme add family
 ## 확인한 것과 한계
 
 - 화면 없는 크롬에서 폭 1280과 390으로 전체 화면을 캡처해 확인했습니다. 가로 넘침, 스크립트 오류, 불러오지 못한 그림은 없었습니다.
-- 처리방침 페이지는 이전 게시본과 바이트 단위로 같습니다.
+- 처리방침 페이지는 정적 HTML이라 스크립트 없이도 읽힙니다. 2026-11-17에 모양을 첫 화면과 맞췄고(같은 글꼴·색·크기), 문구와 본문 링크는 그 전 게시본과 글자까지 같은 것을 비교해 확인했습니다.
 - 첫 화면은 스크립트가 있어야 보입니다. 스크립트가 꺼져 있으면 스튜디오 이름, 문의 주소, 처리방침 링크만 보입니다.
 - 실제 휴대폰과 화면 낭독기에서는 확인하지 않았습니다.
 - 로컬 QA 캡처는 `.qa/`에 둡니다(커밋하지 않음).

@@ -58,7 +58,7 @@ def convert(md: str):
             body.append('<ul class="meta">%s</ul>' % items)
         else:
             body.append("<p>%s</p>" % inline(" ".join(line.strip() for line in lines)))
-    return title, "\n      ".join(body)
+    return title, "\n    ".join(body)
 
 
 PAGE = """<!doctype html>
@@ -68,39 +68,31 @@ PAGE = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} | 파랑버섯 스튜디오</title>
   <meta name="description" content="파랑버섯 스튜디오가 제공하는 게임 「아빠 전쟁」의 개인정보 처리방침입니다.">
-  <meta name="theme-color" content="#111114">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" href="../../assets/favicon-64.png">
   <link rel="apple-touch-icon" href="../../assets/icon-180.png">
-  <link rel="stylesheet" href="../../assets/site.css?v=2">
+  <link rel="stylesheet" href="../../assets/site.css?v=3">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../../" aria-label="파랑버섯 스튜디오 첫 화면">
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M18 27h12l2 13a3 3 0 0 1-3 3.4H19A3 3 0 0 1 16 40z" fill="#fcf8ea" stroke="#111114" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M4 25C4 13 13 5 24 5s20 8 20 20c0 2.6-2 4-4.4 4H8.4C6 29 4 27.6 4 25z" fill="#1b74ff" stroke="#111114" stroke-width="3" stroke-linejoin="round"/>
-        <circle cx="16" cy="17" r="3.6" fill="#fcf8ea"/>
-        <circle cx="29" cy="13" r="2.6" fill="#fcf8ea"/>
-        <circle cx="33" cy="22" r="3" fill="#fcf8ea"/>
-      </svg>
-      <span>파랑버섯 스튜디오<small>Bluemushroom studio</small></span>
+      <img src="../../assets/logo-mushroom.svg" width="28" height="28" alt="">
+      <span>파랑버섯 스튜디오</span>
     </a>
     <nav class="nav" aria-label="주요 메뉴">
-      <a href="../../#p3">게임</a>
-      <a href="../../#p5">스튜디오</a>
+      <a href="../../#p3">출시 예정작</a>
+      <a href="../../#p5">연락하기</a>
     </nav>
   </div>
 </header>
 
 <main class="doc">
-  <div class="wrap">
-    <article class="card">
-      <a class="back" href="../../">← 파랑버섯 스튜디오</a>
-      {body}
-    </article>
-  </div>
+  <article>
+    <a class="back" href="../../">← 첫 화면</a>
+    {body}
+  </article>
 </main>
 
 <footer>

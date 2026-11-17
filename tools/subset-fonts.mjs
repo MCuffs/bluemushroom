@@ -36,6 +36,8 @@ function collectCharacters() {
   const files = [
     ...walk(join(ROOT, 'src')).filter(path => /\.(tsx?|jsx?)$/.test(path) && !path.includes('/themes/')),
     join(ROOT, 'index.html'),
+    // 처리방침 페이지도 같은 글꼴 파일을 쓴다. 생성된 페이지를 읽어 그 글자까지 담는다.
+    join(ROOT, 'public/dadwar/privacy/index.html'),
   ];
   const text = files.map(path => readFileSync(path, 'utf8')).join('') + ASCII + EXTRA;
   return [...new Set([...text])].filter(ch => ch.codePointAt(0) >= 0x20).join('');
