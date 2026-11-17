@@ -15,7 +15,7 @@ GitHub Pages가 `main` 브랜치의 `docs/`를 게시합니다. 2026-11-17부터
 npm ci
 ```
 
-고친 뒤에는 빌드해서 `docs/`를 갱신하고, 소스와 `docs/`를 함께 커밋합니다. `main`에 올리면 1~2분 안에 사이트에 반영됩니다.
+고친 뒤에는 빌드해서 `docs/`를 갱신하고, 소스와 `docs/`를 함께 커밋합니다. `main`에 올리면 1~2분 안에 사이트에 반영됩니다. 빌드는 글꼴 파일도 그때의 문구에 맞춰 다시 만듭니다.
 
 ```bash
 npm run build
@@ -70,7 +70,7 @@ npm run astryx -- theme add family
 - **자리 표시:** `#p1`~`#p6`, `#dadwar`를 유지합니다. 처리방침 페이지의 메뉴가 `#p3`, `#p5`로 들어옵니다.
 - **문의 주소:** `contact@shuffla.io`.
 - **출시 상태 표기:** 아빠 전쟁은 개발 중, 후속 다섯 작품은 출시 예정·기획 중으로 구분합니다. 정해지지 않은 출시일이나 스토어 링크를 넣지 않습니다.
-- **글꼴:** `public/assets/fonts/`의 두 글꼴은 지금 문구에 쓰인 글자만 담은 서브셋입니다(Gothic A1, Black Han Sans, OFL 고지 포함). 새 글자가 들어가면 그 글자만 시스템 글꼴로 나오므로 서브셋을 다시 만들어야 합니다. 원본 글꼴 파일은 이 저장소에 없습니다.
+- **글꼴:** 글꼴은 Pretendard 한 가지입니다(굵기 400~700). `tools/subset-fonts.mjs`가 원본(`content/fonts/PretendardVariable.woff2`)에서 사이트 문구에 쓰인 글자만 남겨 `public/assets/fonts/bluemushroom-sans.woff2`를 만들고, `npm run build`가 매번 먼저 실행합니다. Pretendard는 SIL OFL 1.1이고 'Pretendard'가 예약 이름이라, 글자를 덜어 낸 파일은 글꼴 안의 이름을 'Bluemushroom Sans'로 바꿔 배포합니다. 라이선스 고지(`public/assets/fonts/Pretendard-OFL.txt`)를 함께 게시합니다.
 
 ## 파일
 
@@ -84,6 +84,8 @@ npm run astryx -- theme add family
 | `public/` | 그대로 게시되는 파일. 그림, 글꼴, 처리방침 페이지와 그 스타일(`assets/site.css`), 인증 파일, `.nojekyll` |
 | `docs/` | 빌드 결과. GitHub Pages가 게시 |
 | `content/` | 처리방침 원문, 디자인 기준, 작품 라인업과 제작 순서, 원화와 제작 기록 |
+| `content/fonts/` | Pretendard 원본 글꼴과 라이선스 원문 (게시하지 않음) |
+| `tools/subset-fonts.mjs` | 원본 글꼴에서 사이트 글자만 남긴 글꼴 파일을 만든다. 빌드가 자동 실행 |
 | `tools/build_privacy.py` | 처리방침 원문을 `public/dadwar/privacy/index.html`로 변환 |
 | `tools/capture.mjs` | 화면 없는 크롬으로 페이지 전체 캡처 (`node tools/capture.mjs <주소> <파일> <폭> <높이> [mobile]`) |
 | `tools/build_hero_art.py` | 이전 만화풍 표지 그림용. 지금은 쓰지 않음 |

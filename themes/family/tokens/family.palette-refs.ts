@@ -4,8 +4,8 @@
 // prettier-ignore
 export const familyPaletteRefs = {
   accent: {
-    light: {35: '#385d1f', 45: '#4f7539', 85: '#c2dfb3'},
-    dark: {30: '#30511a', 70: '#93b880', 80: '#b4d1a5'},
+    light: {5: '#111111', 35: '#525252', 85: '#d4d4d4'},
+    dark: {30: '#474747', 70: '#ababab', 80: '#c6c6c6'},
   },
   white: '#ffffff',
   black: '#000000',

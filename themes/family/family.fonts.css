@@ -1,15 +1,9 @@
-/* 글꼴 파일을 불러오는 선언만 둔다. 모양은 Astryx 테마(src/themes/family)가 정한다. */
+/* 글꼴 파일을 불러오는 선언만 둔다. 모양은 Astryx 테마(src/themes/family)가 정한다.
+   파일은 `node tools/subset-fonts.mjs` 가 Pretendard 에서 사이트 글자만 남겨 만든다(굵기 400~700). */
 @font-face {
-  font-family: StudioSans;
-  src: url('/assets/fonts/studio-sans.woff2') format('woff2');
+  font-family: 'Bluemushroom Sans';
+  src: url('/assets/fonts/bluemushroom-sans.woff2') format('woff2');
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: StudioGameTitle;
-  src: url('/assets/fonts/studio-game-title.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 400 900;
+  font-weight: 400 700;
   font-display: swap;
 }

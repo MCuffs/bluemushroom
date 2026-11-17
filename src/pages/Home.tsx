@@ -3,7 +3,7 @@
 // 주소의 자리 표시(#p1 ~ #p6, #dadwar)는 처리방침 페이지와 바깥 링크가 쓰므로 바꾸지 않는다.
 
 import {useEffect, useState} from 'react';
-import type {ComponentProps} from 'react';
+import type {ComponentProps, ReactNode} from 'react';
 import {AppShell} from '@astryxdesign/core/AppShell';
 import {TopNav, TopNavHeading, TopNavItem} from '@astryxdesign/core/TopNav';
 import {VStack, HStack, Layout, LayoutContent} from '@astryxdesign/core/Layout';
@@ -29,8 +29,6 @@ import {
 const PRIVACY_URL = 'dadwar/privacy/';
 const TEST_BUILD_URL = 'https://github.com/MCuffs/mandu-coporation/releases';
 const CONTACT = 'contact@shuffla.io';
-
-type CardTone = 'yellow' | 'green' | 'orange' | 'blue';
 
 const FAMILY = [
   {
@@ -84,7 +82,6 @@ const GAMES: Array<{
   cast: string;
   face: string;
   faceName: string;
-  tone: CardTone;
   isLive: boolean;
   order: string;
   story: [string, string];
@@ -96,7 +93,6 @@ const GAMES: Array<{
     cast: '주인공 · 칠석 · 만수',
     face: 'assets/face-dad.webp',
     faceName: '칠석',
-    tone: 'yellow',
     isLive: true,
     order: '첫 번째로 만나요',
     story: [
@@ -111,7 +107,6 @@ const GAMES: Array<{
     cast: '주인공 · 만수',
     face: 'assets/face-mansu.webp',
     faceName: '만수',
-    tone: 'green',
     isLive: false,
     order: '다음 이야기 후보',
     story: [
@@ -126,7 +121,6 @@ const GAMES: Array<{
     cast: '주인공 · 수진 · 온 가족',
     face: 'assets/face-mom.webp',
     faceName: '수진',
-    tone: 'orange',
     isLive: false,
     order: '다음 이야기 후보',
     story: [
@@ -141,7 +135,6 @@ const GAMES: Array<{
     cast: '주인공 · 철수 · 만수',
     face: 'assets/face-cheolsu.webp',
     faceName: '철수',
-    tone: 'blue',
     isLive: false,
     order: '후속 구상',
     story: [
@@ -156,7 +149,6 @@ const GAMES: Array<{
     cast: '주인공 · 칠석',
     face: 'assets/face-dad.webp',
     faceName: '칠석',
-    tone: 'yellow',
     isLive: false,
     order: '후속 구상',
     story: [
@@ -171,7 +163,6 @@ const GAMES: Array<{
     cast: '주인공 · 칠석 · 수진',
     face: 'assets/face-mom.webp',
     faceName: '수진',
-    tone: 'green',
     isLive: false,
     order: '특별편 구상',
     story: [
@@ -202,6 +193,11 @@ const STUDIO_FACTS = [
   {label: '함께하는 곳', value: '대한민국 · Republic of Korea'},
 ];
 
+// 구역 사이를 넉넉히 띄운다. 틀의 간격(gap 10)에 위아래 여백을 더한다.
+function Band({children}: {children: ReactNode}) {
+  return <VStack paddingBlock={6}>{children}</VStack>;
+}
+
 function SiteNav() {
   return (
     <TopNav
@@ -231,8 +227,8 @@ function Cover() {
     <VStack gap={10} id="p1">
       <VStack gap={6} hAlign="center">
         <VStack gap={3} hAlign="center">
-          <Token label="함께라서, 참 좋은 날" color="green" />
-          <Heading level={1} type="display-2" justify="center" textWrap="balance">
+          <Token label="함께라서, 참 좋은 날" />
+          <Heading level={1} type="display-1" justify="center" textWrap="balance">
             두런두런, 우리의 이야기.
           </Heading>
           <Text type="large" color="secondary" justify="center" textWrap="balance">
@@ -285,10 +281,10 @@ function Origin() {
     <VStack gap={8} id="p2">
       <Grid columns={{minWidth: 320, max: 2}} gap={8}>
         <VStack gap={3}>
-          <Text type="label" color="accent">
+          <Text type="label" color="secondary">
             우리의 시작
           </Text>
-          <Heading level={2} textWrap="balance">
+          <Heading level={2} type="display-3" textWrap="balance">
             가족이라는 가장 가까운 이야기.
           </Heading>
         </VStack>
@@ -313,7 +309,7 @@ function Origin() {
         {VALUES.map(value => (
           <Card key={value.word} variant="muted">
             <VStack gap={2}>
-              <Text type="label" color="accent">
+              <Text type="label" color="secondary">
                 {value.word}
               </Text>
               <Heading level={3}>{value.title}</Heading>
@@ -343,10 +339,10 @@ function Lineup() {
   return (
     <VStack gap={8} id="p3">
       <VStack gap={3}>
-        <Text type="label" color="accent">
+        <Text type="label" color="secondary">
           칠석네 가족의 다음 대소동
         </Text>
-        <Heading level={2} textWrap="balance">
+        <Heading level={2} type="display-3" textWrap="balance">
           한 가족, 여섯 가지 이야기.
         </Heading>
         <Text type="large" color="secondary">
@@ -355,7 +351,7 @@ function Lineup() {
       </VStack>
       <Grid columns={{minWidth: 300, max: 3}} gap={4}>
         {GAMES.map(game => (
-          <Card key={game.title} variant={game.tone}>
+          <Card key={game.title}>
             <VStack gap={4}>
               <HStack gap={3} justify="between" vAlign="center">
                 <Token
@@ -370,7 +366,7 @@ function Lineup() {
                 <Text weight="semibold">{game.hook}</Text>
                 <Text type="supporting">{game.cast}</Text>
               </VStack>
-              <Collapsible trigger="어떤 이야기인가요?" defaultIsOpen={false}>
+              <Collapsible trigger={<Text weight="medium">어떤 이야기인가요?</Text>} defaultIsOpen={false}>
                 <VStack gap={2}>
                   <Text as="p" display="block">
                     {game.story[0]}
@@ -410,7 +406,7 @@ function Lineup() {
 
 function DadWar() {
   return (
-    <Card variant="green" padding={8} id="dadwar">
+    <Card variant="muted" padding={8} id="dadwar">
       <Grid columns={{minWidth: 300, max: 2}} gap={8} align="center">
         <VStack gap={5}>
           <VStack gap={3} hAlign="start">
@@ -418,7 +414,7 @@ function DadWar() {
             <Text type="label" color="secondary">
               우리 아빠가 주인공이라면?
             </Text>
-            <Heading level={2} type="display-3">
+            <Heading level={2} type="display-2">
               아빠 전쟁
             </Heading>
             <Text type="large" weight="semibold">
@@ -472,10 +468,10 @@ function Play() {
     <Grid columns={{minWidth: 300, max: 2}} gap={8} align="center" id="p4">
       <VStack gap={6}>
         <VStack gap={3}>
-          <Text type="label" color="accent">
+          <Text type="label" color="secondary">
             한 손으로 펼치는 대소동
           </Text>
-          <Heading level={2} textWrap="balance">
+          <Heading level={2} type="display-3" textWrap="balance">
             짧게 즐기고, 한 판 더.
           </Heading>
         </VStack>
@@ -516,10 +512,10 @@ function Contact() {
     <Card variant="muted" padding={8} id="p5">
       <Grid columns={{minWidth: 300, max: 2}} gap={8}>
         <VStack gap={3}>
-          <Text type="label" color="accent">
+          <Text type="label" color="secondary">
             다음 이야기를 함께
           </Text>
-          <Heading level={2} textWrap="balance">
+          <Heading level={2} type="display-3" textWrap="balance">
             우리의 다음 장에, 당신을 초대합니다.
           </Heading>
           <Text color="secondary">
@@ -563,10 +559,10 @@ function EnglishRegion(props: ComponentProps<'section'>) {
 function English() {
   return (
     <VStack as={EnglishRegion} gap={3} id="p6" maxWidth={720}>
-      <Text type="label" color="accent">
+      <Text type="label" color="secondary">
         A little afterword
       </Text>
-      <Heading level={2} textWrap="balance">
+      <Heading level={2} type="display-3" textWrap="balance">
         Some things deserve to stay with us.
       </Heading>
       <Text as="p" display="block" color="secondary">
@@ -643,17 +639,29 @@ export default function Home() {
       mobileNav={{isOpen: isNavOpen, onOpenChange: setIsNavOpen}}>
       <Layout
         height="auto"
-        contentWidth={1200}
+        contentWidth={1080}
         content={
           <LayoutContent padding={6} isScrollable={false}>
             <VStack gap={10}>
               <Cover />
-              <Origin />
-              <Lineup />
-              <DadWar />
-              <Play />
-              <Contact />
-              <English />
+              <Band>
+                <Origin />
+              </Band>
+              <Band>
+                <Lineup />
+              </Band>
+              <Band>
+                <DadWar />
+              </Band>
+              <Band>
+                <Play />
+              </Band>
+              <Band>
+                <Contact />
+              </Band>
+              <Band>
+                <English />
+              </Band>
               <Footer />
             </VStack>
           </LayoutContent>

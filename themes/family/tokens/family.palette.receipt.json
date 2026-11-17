@@ -3,7 +3,7 @@
   "recipe": "astryx-oklch-v1",
   "generatorVersion": "palette-generator-v1",
   "candidateFormatVersion": "palette-typescript-v1",
-  "candidateSha256": "c52969b08d04c11b936ec7ccbf612f87fa5104da02e4412a6d038c75d11c2ce4",
+  "candidateSha256": "e54638e8b0c8bdfc3ff614aa0275aa61f4cdbd72943dc15c9ac97779f672e29a",
   "request": {
     "recipe": "astryx-oklch-v1",
     "vibrancy": 50,
@@ -36,13 +36,13 @@
       {
         "id": "accent",
         "name": "Accent",
-        "seed": "#4f7539",
-        "kind": "chromatic",
+        "seed": "#111111",
+        "kind": "neutral",
         "anchors": [
           {
             "mode": "light",
-            "stop": 45,
-            "color": "#4f7539",
+            "stop": 5,
+            "color": "#111111",
             "policy": "exact"
           }
         ]
@@ -54,36 +54,29 @@
       "accent": {
         "light": {
           "monotonic": true,
-          "minimumAdjacentDeltaE": 4.01061543492501,
-          "maximumAdjacentDeltaE": 18.511159603352827,
-          "maximumHueDrift": 2.714314284074021,
+          "minimumAdjacentDeltaE": 4.056735649681861,
+          "maximumAdjacentDeltaE": 17.763777191722603,
+          "maximumHueDrift": 0,
           "hueIdentityRisk": null,
-          "gamutMappedStops": [
-            10,
-            15,
-            20,
-            100
-          ],
+          "gamutMappedStops": [],
           "anchors": [
             {
               "mode": "light",
-              "stop": 45,
-              "color": "#4f7539",
+              "stop": 5,
+              "color": "#111111",
               "policy": "exact",
-              "generatedColor": "#4f7539",
+              "generatedColor": "#111111",
               "deltaE": 0
             }
           ]
         },
         "dark": {
           "monotonic": true,
-          "minimumAdjacentDeltaE": 4.125896128858546,
-          "maximumAdjacentDeltaE": 18.22204556734545,
-          "maximumHueDrift": 0.789220807295635,
+          "minimumAdjacentDeltaE": 4.056735649681861,
+          "maximumAdjacentDeltaE": 17.763777191722603,
+          "maximumHueDrift": 0,
           "hueIdentityRisk": null,
-          "gamutMappedStops": [
-            100
-          ],
+          "gamutMappedStops": [],
           "anchors": []
         }
       }
@@ -94,18 +87,18 @@
         "stop": 50,
         "closestFamilies": null,
         "minimumFamilyDeltaE": null,
-        "strongestFamily": "Accent",
-        "weakestFamily": "Accent",
-        "chromaRatio": 1
+        "strongestFamily": null,
+        "weakestFamily": null,
+        "chromaRatio": null
       },
       {
         "mode": "dark",
         "stop": 50,
         "closestFamilies": null,
         "minimumFamilyDeltaE": null,
-        "strongestFamily": "Accent",
-        "weakestFamily": "Accent",
-        "chromaRatio": 1
+        "strongestFamily": null,
+        "weakestFamily": null,
+        "chromaRatio": null
       }
     ]
   }

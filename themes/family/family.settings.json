@@ -4,16 +4,6 @@
   "mode": "light-only",
   "settings": [
     {
-      "thing": "accent",
-      "value": "#4f7539",
-      "source": "dial"
-    },
-    {
-      "thing": "corners",
-      "value": "round",
-      "source": "dial"
-    },
-    {
       "thing": "surfaces",
       "value": "outlined",
       "source": "dial"
@@ -24,34 +14,50 @@
       "source": "dial"
     },
     {
+      "thing": "spacing",
+      "value": "spacious",
+      "source": "dial",
+      "on": "button"
+    },
+    {
+      "thing": "font",
+      "value": "\"Bluemushroom Sans\", system-ui, sans-serif",
+      "source": "dial"
+    },
+    {
+      "thing": "type",
+      "value": "standard",
+      "source": "dial"
+    },
+    {
       "thing": "headings",
-      "value": "regular",
+      "value": "bold",
       "source": "dial",
       "axis": "weight"
     },
     {
-      "thing": "font",
-      "value": "\"StudioSans\", system-ui, sans-serif",
-      "source": "dial"
-    },
-    {
-      "thing": "font",
-      "value": "\"StudioGameTitle\", \"StudioSans\", system-ui, sans-serif",
+      "thing": "headings",
+      "value": "tight",
       "source": "dial",
-      "on": "heading"
+      "axis": "tracking"
     },
     {
-      "thing": "type",
-      "value": "display",
+      "thing": "accent",
+      "value": "#111111",
       "source": "dial"
     },
     {
-      "thing": "spacing",
-      "value": "spacious",
+      "thing": "corners",
+      "value": "medium",
+      "source": "dial"
+    },
+    {
+      "thing": "corners",
+      "value": "pill",
       "source": "dial",
       "on": "button"
     }
   ],
   "lifted": [],
-  "palette": "bebb5082e28759b1d4ddeb137c9a40cf44cc9e1842d7a8a226e0d3c390a895a8"
+  "palette": "694e99f9f8719b1d1deb9f26bdf30872c96394f9c8635689673d3f8fd1e64f4c"
 }
